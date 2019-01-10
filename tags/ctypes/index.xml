@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ctypes on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/tags/ctypes/</link>
+    <description>Recent content in Ctypes on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 20 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/tags/ctypes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ctypes</title>
+      <link>http://chiching.github.io/posts/python/ctypes/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/python/ctypes/</guid>
+      <description>get methods from a dll C:\Users\chiching\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin&amp;gt;link.exe /dump /exports d:/xfic2.dll
+the result is something like this: ordinal hint RVA name 1 0 0000100F ??4CIcDllwd@@QAEAAV0@ABV0@@Z 2 1 00001028 _CardAdd@8 3 2 0000145B _CardPassAll@8 4 3 00001366 _ClearData@12 5 4 000012D0 _CloseCom@0 6 5 00001483 _CmdClearAdmin@0
+or use Depends software to check it.
+or&amp;hellip;..
+C:\Users\chiching\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin&amp;gt;DUMPBIN -EXPORTS d:/xfic2.dll</description>
+    </item>
+    
+  </channel>
+</rss>

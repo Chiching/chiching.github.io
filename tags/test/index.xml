@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/tags/test/</link>
+    <description>Recent content in Test on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jmeter 登录系统并添加 csrf_token</title>
+      <link>http://chiching.github.io/posts/test/jmeter/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/test/jmeter/</guid>
+      <description>在测试计划下面添加*线程组*。
+ 在线程组下面添加*HTTP请求默认值*， 这样可以统一添加协议，地址，端口，不用每个Sampler去填写。
+ 在线程组下面添加*HTTP Cookie管理器*。
+ 在线程组下面添加*查看结果树*，查看每个请求和返回的内容。
+ 添加一个GET *Sampler*，请求login页面。
+ 为这个Sampler添加一个后置处理器-&amp;gt;*正则表达式提取器*。
+ 要检查的响应字段： body。 引用名称： csrf_token，可以任意填，后面要用到。 正则表达式： &amp;lt;input id=&amp;quot;csrf_token&amp;quot; name=&amp;quot;csrf_token&amp;quot; type=&amp;quot;hidden&amp;quot; value=&amp;quot;(.+?)&amp;quot;&amp;gt;, 具体字符串可以在查看结果树中查找，如果csrf token是在header中，需要注意前面一个*要检查的响应字段*选项。    模板：$1$   添加另外一个Post *Sampler*，Post到登录页面。 在查看结果树中查找需用户名和密码的字段名称，然后添加另外的一个 csrf_token， 值是 ${csrf_token}  Jemter下载1</description>
+    </item>
+    
+  </channel>
+</rss>

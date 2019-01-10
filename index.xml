@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/</link>
+    <description>Recent content on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jmeter 登录系统并添加 csrf_token</title>
+      <link>http://chiching.github.io/posts/test/jmeter/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/test/jmeter/</guid>
+      <description>在测试计划下面添加*线程组*。
+ 在线程组下面添加*HTTP请求默认值*， 这样可以统一添加协议，地址，端口，不用每个Sampler去填写。
+ 在线程组下面添加*HTTP Cookie管理器*。
+ 在线程组下面添加*查看结果树*，查看每个请求和返回的内容。
+ 添加一个GET *Sampler*，请求login页面。
+ 为这个Sampler添加一个后置处理器-&amp;gt;*正则表达式提取器*。
+ 要检查的响应字段： body。 引用名称： csrf_token，可以任意填，后面要用到。 正则表达式： &amp;lt;input id=&amp;quot;csrf_token&amp;quot; name=&amp;quot;csrf_token&amp;quot; type=&amp;quot;hidden&amp;quot; value=&amp;quot;(.+?)&amp;quot;&amp;gt;, 具体字符串可以在查看结果树中查找，如果csrf token是在header中，需要注意前面一个*要检查的响应字段*选项。    模板：$1$   添加另外一个Post *Sampler*，Post到登录页面。 在查看结果树中查找需用户名和密码的字段名称，然后添加另外的一个 csrf_token， 值是 ${csrf_token}  Jemter下载1</description>
+    </item>
+    
+    <item>
+      <title>Maven 安装</title>
+      <link>http://chiching.github.io/posts/java/maven%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/java/maven%E5%AE%89%E8%A3%85/</guid>
+      <description>windows 安装 eclipse 配置  windows 安装  下载 maven 解压到一个目录, 我放在D:\java\apache-maven-3.5.0 添加环境变量 MAVEN_HOME = D:\java\apache-maven-3.5.0, PATH=%PATH%;%MAVEN_HOME%\bin windows 10:  mvn &amp;ndash;version 检查安装结果  添加本地仓库 修改 %maven_home%\conf下面的settings.xml 文件
+&amp;lt;!-- localRepository | The path to the local repository maven will use to store artifacts. | | Default: ${user.home}/.m2/repository &amp;lt;localRepository&amp;gt;/path/to/local/repo&amp;lt;/localRepository&amp;gt; --&amp;gt; &amp;lt;!-- 添加下面行 --&amp;gt; &amp;lt;localRepository&amp;gt;D:\java\repository&amp;lt;/localRepository&amp;gt;  eclipse 配置 在Window –&amp;gt; Preferences 下，然后： maven -&amp;gt; installations， 点击添加，选择目录D:\java\apache-maven-3.5.0. (MAVEN_HOME)
+  maven -&amp;gt; user settings，user settings选择D:\java\apache-maven-3.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack miscellaneous</title>
+      <link>http://chiching.github.io/posts/openstack/openstack/</link>
+      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/openstack/openstack/</guid>
+      <description>参考笔记</description>
+    </item>
+    
+    <item>
+      <title>Spark rdd transformations and actions</title>
+      <link>http://chiching.github.io/posts/spark/rdd/</link>
+      <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/spark/rdd/</guid>
+      <description>创建RDD &amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1, 2, 3]) &amp;gt;&amp;gt;&amp;gt; rdd = sc.textFile(&amp;quot;/path/to/filename.txt&amp;quot;)  Basic RDD transforms  map(func)
+&amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1, 2, 3]) &amp;gt;&amp;gt;&amp;gt; rdd.map(lambda x: x*x).collect() [1, 4, 9]  filter(func)
+&amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1,2,3]) &amp;gt;&amp;gt;&amp;gt; rdd.filter(lambda x: x &amp;gt; 2).collect() [3]  flatMap(func) 将原RDD中的每一个元素映射为0个或者多个元素，每次map过程的返回值必须是集合（可空）
+&amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1,2,3]) &amp;gt;&amp;gt;&amp;gt; rdd.flatMap(lambda x: range(1, x)).collect() [1, 1, 2] &amp;gt;&amp;gt;&amp;gt; rdd.flatMap(lambda x: range(2, x)).collect() [2] &amp;gt;&amp;gt;&amp;gt; rdd.flatMap(lambda x: range(3, x)).collect() []  sample(withReplacement, fraction, seed) 对已有的RDD进行采样。 withReplacement 布尔型， 表示是否用随机值替换 fraction 采样比例 seed 随机种子数</description>
+    </item>
+    
+    <item>
+      <title>Spark installation</title>
+      <link>http://chiching.github.io/posts/spark/spark%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/spark/spark%E5%AE%89%E8%A3%85/</guid>
+      <description>Spark installation  install java. Refer to hadoop分布式安装 install scala Download the latest version of Scala by visit the following link Download Scala. tar -zxf scala-2.12.2.tgz mv scala-2.12.2 scala sudo mv scala /usr/local sudo vi /etc/profile #在文件最后添加 export PATH=$PATH:/usr/local/scala/bin #刷新配置 source /etc/profile scala -version # now you will be able to see the version   install spark Download the latest version of Spark by visiting the following link Download Spark.</description>
+    </item>
+    
+    <item>
+      <title>Hadoop 伪分布式安装</title>
+      <link>http://chiching.github.io/posts/hadoop/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/hadoop/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85/</guid>
+      <description>添加用户 安装jdk 安装hadoop  添加用户  adduser hadoop passwd hadoop vi /etc/sudoers 添加一行 hadoop ALL=(ALL) ALL su - hadoop  安装jdk  sudo tar -zxf jdk-8u121-linux-x64.tar.gz -C /usr/local/ sudo vi /etc/profile &amp;gt; #在文件最后添加 export JAVA_HOME=/usr/local/jdk1.8.0_121 export PATH=$PATH:$JAVA_HOME/bin #刷新配置 source /etc/profile now you will be able to see java -version  安装hadoop  sudo tar -zxf hadoop-2.8.0.tar.gz -C /usr/local sudo vi /etc/profile
+ #在文件最后添加 export HADOOP_HOME=/usr/local/hadoop-2.8.0 export PATH=$PATH:$HADOOP_HOME/bin #刷新配置 source /etc/profile</description>
+    </item>
+    
+    <item>
+      <title>Linux installation</title>
+      <link>http://chiching.github.io/posts/linux/installation/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/linux/installation/</guid>
+      <description>通过Virtualbox安装Minimal Centos7后，有一些必要设置需要修改，以便后面的操作。
+ 网络配置。 主要修改ONBOOT=yes, 也可以设置静态IP vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 shell BOOTPROTO=static IPADDR=192.168.0.200 NETMASK=255.255.255.0 Gateway=192.168.0.1 DNS1=114.114.114.114 ONBOOT=yes   service network restart or systemctl restart network to restart network device yum upgrade yum install net-tools, so that ifconfig works. vi /etc/hostname to change the hostname 防火墙
+#查看防火墙状态 systemctl status firewalld #关闭防火墙 systemctl disable firewalld systemctl stop firewalld #开启防火墙 systemctl enable firewalld systemctl start firewalld  配置ssh免登陆
+cd ~/.ssh ssh-keygen -t rsa #将公钥拷贝到要免登陆的机器上 ssh-copy-id master   </description>
+    </item>
+    
+    <item>
+      <title>Start a vm by using vagrant</title>
+      <link>http://chiching.github.io/posts/vm/vagrant/</link>
+      <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/vm/vagrant/</guid>
+      <description>Install Virtual Box Install Vagrant Add vagrant box &amp;gt; vagrant box add centos/7 # this will download the box image to you local as a vm template, and you could find boxes on the public Vagrant box catalog  Setup project mkdir vagrant cd vagrant vagrant init Update Vagrantfile ruby Vagrant.configure(&amp;quot;2&amp;quot;) do |config| config.vm.box = &amp;quot;centos/7&amp;quot; # box name is the one we added before config.vm.box_check_update = false # don&#39;t check update, so that the vm start speed faster.</description>
+    </item>
+    
+    <item>
+      <title>Odoo session</title>
+      <link>http://chiching.github.io/posts/odoo/session/</link>
+      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/odoo/session/</guid>
+      <description>用户长时间不操作，自动退出。 通过修改部分源码，勉强可以工作。 client: Path: D:\odoo\src\addons\web\static\src\js\framework\ajax.js 添加下面代码:
+if(result.error.message == &amp;quot;Odoo Session Expired&amp;quot;){ window.location.href = &#39;/&#39;; }  server: path: D:\odoo\src\odoo\http.py 参考链接1 参考链接2</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL Backup</title>
+      <link>http://chiching.github.io/posts/postgresql/backup_recovery/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/postgresql/backup_recovery/</guid>
+      <description>PG backups 图片来自网络 auto backup on windows @echo off @setlocal enableextensions @cd /d &amp;quot;%~dp0&amp;quot; SET PGPATH=E:\PostgreSQL\9.6\bin\ SET BACKUP_FILE_PATH=G:\db_backup\ SET DB_NAME=klt_eis SET DBUSR=kltpg SET PGPASSWORD=klt.pgpwd FOR /F &amp;quot;TOKENS=1,2,3 DELIMS=/ &amp;quot; %%i IN (&#39;DATE /T&#39;) DO SET d=%%i-%%j-%%k FOR /F &amp;quot;TOKENS=1,2,3 DELIMS=: &amp;quot; %%i IN (&#39;TIME /T&#39;) DO SET t=%%i%%j%%k SET DBDUMP=%DB_NAME%_%d%_%t%.sql @ECHO OFF %PGPATH%pg_dump -h localhost -p 5432 -U %DBUSR% %DB_NAME% &amp;gt; %BACKUP_FILE_PATH%%DBDUMP% echo Backup Complete %BACKUP_FILE_PATH%%DBDUMP% pause  retore  psql -Uusername &amp;lt; filename dbname psql -Uusername -f filename dbname  backup a table to file or load data into table  COPY mis_user (name, account_number) TO &amp;lsquo;e:/employee.</description>
+    </item>
+    
+    <item>
+      <title>Odoo js资源错误</title>
+      <link>http://chiching.github.io/posts/odoo/error/</link>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/odoo/error/</guid>
+      <description>问题描述: 访问时，出现如下错误。即使创建新的数据库，问题还是存在。 Refused to execute script from &amp;lsquo;http://127.0.0.1:8069/web/content/344-66e64d5/web.assets_common.js&#39; because its MIME type (&amp;lsquo;text/plain&amp;rsquo;) is not executable, and strict MIME type checking is enabled. login?debug=1:1 Refused to execute script from &amp;lsquo;http://127.0.0.1:8069/web/content/345-6d087f3/web.assets_frontend.js&#39; because its MIME type (&amp;lsquo;text/plain&amp;rsquo;) is not executable, and strict MIME type checking is enabled.
+查找问题: 所有资源的 mimetype 都是 text/plain
+select id, name,mimetype from ir_attachment order by name;  解决办法: 更新注册表： - 运行 regedit. - 从左边的文件夹中定位到 HKEY_LOCAL_MACHINE/SOFTWARE/Classes/.js - 在右边的pane中找到 content type, 更改内容为 text/javascript - 以后新建的数据库就不会有这个问题。</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL miscellaneous</title>
+      <link>http://chiching.github.io/posts/postgresql/script/</link>
+      <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/postgresql/script/</guid>
+      <description> aggregate function  coalesce(field, 0) means if field is null, return 0
+ </description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://chiching.github.io/posts/git/git/</link>
+      <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/git/git/</guid>
+      <description> 图片均来自网络
+git data transport git cheat sheet gitflow </description>
+    </item>
+    
+    <item>
+      <title>Odoo miscellaneous</title>
+      <link>http://chiching.github.io/posts/odoo/relational-obj/</link>
+      <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/odoo/relational-obj/</guid>
+      <description>Eval Relational fields use a special “commands” format to manipulate their values This format is a list of command triplets executed sequentially, possible command triplets are:
+ (0, _, values: dict) links to a new record created from the provided values (1, id, values: dict) updates the already-linked record of id id with the provided values (2, id, _) unlinks and deletes the linked record of id id (3, id, _) unlinks the linked record of id id without deleting it (4, id, _) links to an existing record of id id (5, , ) unlinks all records in the relation, equivalent to using the command 3 on every linked record (6, _, ids) replaces the existing list of linked records by the provoded ones, equivalent to using 5 then 4 for each id inids)  (in command triplets, _ values are ignored and can be anything, generally 0 or False) Any command can be used on Many2many, only 0, 1 and 2 can be used on One2many.</description>
+    </item>
+    
+    <item>
+      <title>windows skills</title>
+      <link>http://chiching.github.io/posts/windows/miscellaneous/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/windows/miscellaneous/</guid>
+      <description> GodMode create a folder with the name as following:
+GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}  清理右键 HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\Background\shellex\ContextMenuHandlers  </description>
+    </item>
+    
+    <item>
+      <title>Ctypes</title>
+      <link>http://chiching.github.io/posts/python/ctypes/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/python/ctypes/</guid>
+      <description>get methods from a dll C:\Users\chiching\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin&amp;gt;link.exe /dump /exports d:/xfic2.dll
+the result is something like this: ordinal hint RVA name 1 0 0000100F ??4CIcDllwd@@QAEAAV0@ABV0@@Z 2 1 00001028 _CardAdd@8 3 2 0000145B _CardPassAll@8 4 3 00001366 _ClearData@12 5 4 000012D0 _CloseCom@0 6 5 00001483 _CmdClearAdmin@0
+or use Depends software to check it.
+or&amp;hellip;..
+C:\Users\chiching\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin&amp;gt;DUMPBIN -EXPORTS d:/xfic2.dll</description>
+    </item>
+    
+    <item>
+      <title>Python Decorater</title>
+      <link>http://chiching.github.io/posts/python/decorater/</link>
+      <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/python/decorater/</guid>
+      <description> decorater @log def now(): print &#39;datetime&#39;  @log equal to now = log(now)
+with parameter @log(&#39;execute&#39;) equal to now = log(&#39;execute&#39;)(now)
+functools.wraps will do something like this: wrapper.__name__ = func.__name__
+import functools def log(text): def decorator(func): @functools.wraps(func) def wrapper(*args, **kw): print &#39;%s %s():&#39; % (text, func.__name__) return func(*args, **kw) return wrapper return decorator  </description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>http://chiching.github.io/about/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/about/</guid>
+      <description> 软件开发工程师。
+写过C#、做过运维、干过自由职业。现专注于网络安全，一名Python和Golang开发工程师。
+ </description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>http://chiching.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Odoo on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/tags/odoo/</link>
+    <description>Recent content in Odoo on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/tags/odoo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Odoo session</title>
+      <link>http://chiching.github.io/posts/odoo/session/</link>
+      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/odoo/session/</guid>
+      <description>用户长时间不操作，自动退出。 通过修改部分源码，勉强可以工作。 client: Path: D:\odoo\src\addons\web\static\src\js\framework\ajax.js 添加下面代码:
+if(result.error.message == &amp;quot;Odoo Session Expired&amp;quot;){ window.location.href = &#39;/&#39;; }  server: path: D:\odoo\src\odoo\http.py 参考链接1 参考链接2</description>
+    </item>
+    
+    <item>
+      <title>Odoo js资源错误</title>
+      <link>http://chiching.github.io/posts/odoo/error/</link>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/odoo/error/</guid>
+      <description>问题描述: 访问时，出现如下错误。即使创建新的数据库，问题还是存在。 Refused to execute script from &amp;lsquo;http://127.0.0.1:8069/web/content/344-66e64d5/web.assets_common.js&#39; because its MIME type (&amp;lsquo;text/plain&amp;rsquo;) is not executable, and strict MIME type checking is enabled. login?debug=1:1 Refused to execute script from &amp;lsquo;http://127.0.0.1:8069/web/content/345-6d087f3/web.assets_frontend.js&#39; because its MIME type (&amp;lsquo;text/plain&amp;rsquo;) is not executable, and strict MIME type checking is enabled.
+查找问题: 所有资源的 mimetype 都是 text/plain
+select id, name,mimetype from ir_attachment order by name;  解决办法: 更新注册表： - 运行 regedit. - 从左边的文件夹中定位到 HKEY_LOCAL_MACHINE/SOFTWARE/Classes/.js - 在右边的pane中找到 content type, 更改内容为 text/javascript - 以后新建的数据库就不会有这个问题。</description>
+    </item>
+    
+    <item>
+      <title>Odoo miscellaneous</title>
+      <link>http://chiching.github.io/posts/odoo/relational-obj/</link>
+      <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/odoo/relational-obj/</guid>
+      <description>Eval Relational fields use a special “commands” format to manipulate their values This format is a list of command triplets executed sequentially, possible command triplets are:
+ (0, _, values: dict) links to a new record created from the provided values (1, id, values: dict) updates the already-linked record of id id with the provided values (2, id, _) unlinks and deletes the linked record of id id (3, id, _) unlinks the linked record of id id without deleting it (4, id, _) links to an existing record of id id (5, , ) unlinks all records in the relation, equivalent to using the command 3 on every linked record (6, _, ids) replaces the existing list of linked records by the provoded ones, equivalent to using 5 then 4 for each id inids)  (in command triplets, _ values are ignored and can be anything, generally 0 or False) Any command can be used on Many2many, only 0, 1 and 2 can be used on One2many.</description>
+    </item>
+    
+  </channel>
+</rss>

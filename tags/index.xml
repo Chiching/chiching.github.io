@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/tags/</link>
+    <description>Recent content in Tags on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 20 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ctypes</title>
+      <link>http://chiching.github.io/tags/ctypes/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/ctypes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://chiching.github.io/tags/git/</link>
+      <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hadoop</title>
+      <link>http://chiching.github.io/tags/hadoop/</link>
+      <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/hadoop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://chiching.github.io/tags/java/</link>
+      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jmeter</title>
+      <link>http://chiching.github.io/tags/jmeter/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/jmeter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://chiching.github.io/tags/linux/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>http://chiching.github.io/tags/maven/</link>
+      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Odoo</title>
+      <link>http://chiching.github.io/tags/odoo/</link>
+      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/odoo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Openstack</title>
+      <link>http://chiching.github.io/tags/openstack/</link>
+      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/openstack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>http://chiching.github.io/tags/postgresql/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://chiching.github.io/tags/python/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rdd</title>
+      <link>http://chiching.github.io/tags/rdd/</link>
+      <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/rdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spark</title>
+      <link>http://chiching.github.io/tags/spark/</link>
+      <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>http://chiching.github.io/tags/test/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vagrant</title>
+      <link>http://chiching.github.io/tags/vagrant/</link>
+      <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://chiching.github.io/tags/windows/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

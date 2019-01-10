@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.52" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Python Decorater | Chiching&#39;s Notes</title>
+    <meta property="og:title" content="Python Decorater - Chiching&#39;s Notes">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2015-03-20T00:00:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2015-03-20T00:00:00&#43;08:00">
+        
+    <meta name="Keywords" content="网络，安全, golang, go, python, postgres, mysql, odoo, python, 软件架构, 公众号, 小程序">
+    <meta name="description" content="Python Decorater">
+        
+    <meta name="author" content="Chiching">
+    <meta property="og:url" content="http://chiching.github.io/posts/python/decorater/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7569469999596948",
+        enable_page_level_ads: true
+    });
+    </script>
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://chiching.github.io">
+                        Chiching&#39;s Notes
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://chiching.github.io">首页</a>
+                    
+                    <a  href="http://chiching.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://chiching.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Python Decorater</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2015年3月20日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://chiching.github.io/categories/python">Python</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="decorater">decorater</h1>
+
+<pre><code class="language-python">@log
+def now():
+    print 'datetime'
+</code></pre>
+
+<!-- more -->
+
+<p><code>@log</code> equal to <code>now = log(now)</code></p>
+
+<h2 id="with-parameter">with parameter</h2>
+
+<p><code>@log('execute')</code> equal to  <code>now = log('execute')(now)</code></p>
+
+<p><code>functools.wraps</code> will do something like this: <code>wrapper.__name__ = func.__name__</code></p>
+
+<pre><code class="language-python">import functools
+def log(text):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kw):
+            print '%s %s():' % (text, func.__name__)
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+</code></pre>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/about/">关于我</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://chiching.github.io/tags/python">Python</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+
+
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://chiching.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    
+    <section class="widget">
+            <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://chiching.github.io/categories/git/">git(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/hadoop/">hadoop(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/java/">java(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/odoo/">odoo(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/openstack/">openstack(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/postgresql/">postgresql(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/python/">python(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/spark/">spark(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/test/">test(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/vagrant/">vagrant(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/categories/windows/">windows(1)</a>
+    </li>
+    
+</ul>
+        </section>
+
+        <section class="widget">
+                <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://chiching.github.io/tags/ctypes/">ctypes</a>
+    
+    <a href="http://chiching.github.io/tags/git/">git</a>
+    
+    <a href="http://chiching.github.io/tags/hadoop/">hadoop</a>
+    
+    <a href="http://chiching.github.io/tags/java/">java</a>
+    
+    <a href="http://chiching.github.io/tags/jmeter/">jmeter</a>
+    
+    <a href="http://chiching.github.io/tags/linux/">linux</a>
+    
+    <a href="http://chiching.github.io/tags/maven/">maven</a>
+    
+    <a href="http://chiching.github.io/tags/odoo/">odoo</a>
+    
+    <a href="http://chiching.github.io/tags/openstack/">openstack</a>
+    
+    <a href="http://chiching.github.io/tags/postgresql/">postgresql</a>
+    
+    <a href="http://chiching.github.io/tags/python/">python</a>
+    
+    <a href="http://chiching.github.io/tags/rdd/">rdd</a>
+    
+    <a href="http://chiching.github.io/tags/spark/">spark</a>
+    
+    <a href="http://chiching.github.io/tags/test/">test</a>
+    
+    <a href="http://chiching.github.io/tags/vagrant/">vagrant</a>
+    
+    <a href="http://chiching.github.io/tags/windows/">windows</a>
+    
+</div>
+            </section>
+
+
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=jzz57hmz" title="最高￥1888云产品通用代金券" target="_blank" style="color:red">
+                
+                    最高￥1888云产品通用代金券
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=jzz57hmz" title="【助力企业上云】性能级主机2-5折" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1aDXhXpzqK1RjSZFvXXcB7VXa-259-194.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.aliyun.com/jianzhan/?userCode=jzz57hmz" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1NA.GlmzqK1RjSZFHXXb3CpXa-200-126.png">
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+  
+    <section class="widget">
+            <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://chiching.github.io/posts/test/jmeter/" title="Jmeter 登录系统并添加 csrf_token">Jmeter 登录系统并添加 csrf_token</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/java/maven%E5%AE%89%E8%A3%85/" title="Maven 安装">Maven 安装</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/openstack/openstack/" title="OpenStack miscellaneous">OpenStack miscellaneous</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/spark/rdd/" title="Spark rdd transformations and actions">Spark rdd transformations and actions</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/spark/spark%E5%AE%89%E8%A3%85/" title="Spark installation">Spark installation</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/hadoop/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85/" title="Hadoop 伪分布式安装">Hadoop 伪分布式安装</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/linux/installation/" title="Linux installation">Linux installation</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/vm/vagrant/" title="Start a vm by using vagrant">Start a vm by using vagrant</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/odoo/session/" title="Odoo session">Odoo session</a>
+    </li>
+    
+    <li>
+        <a href="http://chiching.github.io/posts/postgresql/backup_recovery/" title="PostgreSQL Backup">PostgreSQL Backup</a>
+    </li>
+    
+</ul>
+        </section>
+  
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://chiching.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://chiching.github.io">Chiching&#39;s Notes By Chiching</a>.
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

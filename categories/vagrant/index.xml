@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vagrant on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/categories/vagrant/</link>
+    <description>Recent content in Vagrant on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/categories/vagrant/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Start a vm by using vagrant</title>
+      <link>http://chiching.github.io/posts/vm/vagrant/</link>
+      <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/vm/vagrant/</guid>
+      <description>Install Virtual Box Install Vagrant Add vagrant box &amp;gt; vagrant box add centos/7 # this will download the box image to you local as a vm template, and you could find boxes on the public Vagrant box catalog  Setup project mkdir vagrant cd vagrant vagrant init Update Vagrantfile ruby Vagrant.configure(&amp;quot;2&amp;quot;) do |config| config.vm.box = &amp;quot;centos/7&amp;quot; # box name is the one we added before config.vm.box_check_update = false # don&#39;t check update, so that the vm start speed faster.</description>
+    </item>
+    
+  </channel>
+</rss>

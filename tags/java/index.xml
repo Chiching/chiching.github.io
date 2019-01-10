@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/tags/java/</link>
+    <description>Recent content in Java on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 16 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven 安装</title>
+      <link>http://chiching.github.io/posts/java/maven%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/java/maven%E5%AE%89%E8%A3%85/</guid>
+      <description>windows 安装 eclipse 配置  windows 安装  下载 maven 解压到一个目录, 我放在D:\java\apache-maven-3.5.0 添加环境变量 MAVEN_HOME = D:\java\apache-maven-3.5.0, PATH=%PATH%;%MAVEN_HOME%\bin windows 10:  mvn &amp;ndash;version 检查安装结果  添加本地仓库 修改 %maven_home%\conf下面的settings.xml 文件
+&amp;lt;!-- localRepository | The path to the local repository maven will use to store artifacts. | | Default: ${user.home}/.m2/repository &amp;lt;localRepository&amp;gt;/path/to/local/repo&amp;lt;/localRepository&amp;gt; --&amp;gt; &amp;lt;!-- 添加下面行 --&amp;gt; &amp;lt;localRepository&amp;gt;D:\java\repository&amp;lt;/localRepository&amp;gt;  eclipse 配置 在Window –&amp;gt; Preferences 下，然后： maven -&amp;gt; installations， 点击添加，选择目录D:\java\apache-maven-3.5.0. (MAVEN_HOME)
+  maven -&amp;gt; user settings，user settings选择D:\java\apache-maven-3.</description>
+    </item>
+    
+  </channel>
+</rss>

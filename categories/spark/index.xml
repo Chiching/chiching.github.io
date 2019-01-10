@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spark on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/categories/spark/</link>
+    <description>Recent content in Spark on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/categories/spark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spark rdd transformations and actions</title>
+      <link>http://chiching.github.io/posts/spark/rdd/</link>
+      <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/spark/rdd/</guid>
+      <description>创建RDD &amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1, 2, 3]) &amp;gt;&amp;gt;&amp;gt; rdd = sc.textFile(&amp;quot;/path/to/filename.txt&amp;quot;)  Basic RDD transforms  map(func)
+&amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1, 2, 3]) &amp;gt;&amp;gt;&amp;gt; rdd.map(lambda x: x*x).collect() [1, 4, 9]  filter(func)
+&amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1,2,3]) &amp;gt;&amp;gt;&amp;gt; rdd.filter(lambda x: x &amp;gt; 2).collect() [3]  flatMap(func) 将原RDD中的每一个元素映射为0个或者多个元素，每次map过程的返回值必须是集合（可空）
+&amp;gt;&amp;gt;&amp;gt; rdd = sc.parallelize([1,2,3]) &amp;gt;&amp;gt;&amp;gt; rdd.flatMap(lambda x: range(1, x)).collect() [1, 1, 2] &amp;gt;&amp;gt;&amp;gt; rdd.flatMap(lambda x: range(2, x)).collect() [2] &amp;gt;&amp;gt;&amp;gt; rdd.flatMap(lambda x: range(3, x)).collect() []  sample(withReplacement, fraction, seed) 对已有的RDD进行采样。 withReplacement 布尔型， 表示是否用随机值替换 fraction 采样比例 seed 随机种子数</description>
+    </item>
+    
+    <item>
+      <title>Spark installation</title>
+      <link>http://chiching.github.io/posts/spark/spark%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/spark/spark%E5%AE%89%E8%A3%85/</guid>
+      <description>Spark installation  install java. Refer to hadoop分布式安装 install scala Download the latest version of Scala by visit the following link Download Scala. tar -zxf scala-2.12.2.tgz mv scala-2.12.2 scala sudo mv scala /usr/local sudo vi /etc/profile #在文件最后添加 export PATH=$PATH:/usr/local/scala/bin #刷新配置 source /etc/profile scala -version # now you will be able to see the version   install spark Download the latest version of Spark by visiting the following link Download Spark.</description>
+    </item>
+    
+  </channel>
+</rss>

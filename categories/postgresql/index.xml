@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgresql on Chiching&#39;s Notes</title>
+    <link>http://chiching.github.io/categories/postgresql/</link>
+    <description>Recent content in Postgresql on Chiching&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 22 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chiching.github.io/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PostgreSQL Backup</title>
+      <link>http://chiching.github.io/posts/postgresql/backup_recovery/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/postgresql/backup_recovery/</guid>
+      <description>PG backups 图片来自网络 auto backup on windows @echo off @setlocal enableextensions @cd /d &amp;quot;%~dp0&amp;quot; SET PGPATH=E:\PostgreSQL\9.6\bin\ SET BACKUP_FILE_PATH=G:\db_backup\ SET DB_NAME=klt_eis SET DBUSR=kltpg SET PGPASSWORD=klt.pgpwd FOR /F &amp;quot;TOKENS=1,2,3 DELIMS=/ &amp;quot; %%i IN (&#39;DATE /T&#39;) DO SET d=%%i-%%j-%%k FOR /F &amp;quot;TOKENS=1,2,3 DELIMS=: &amp;quot; %%i IN (&#39;TIME /T&#39;) DO SET t=%%i%%j%%k SET DBDUMP=%DB_NAME%_%d%_%t%.sql @ECHO OFF %PGPATH%pg_dump -h localhost -p 5432 -U %DBUSR% %DB_NAME% &amp;gt; %BACKUP_FILE_PATH%%DBDUMP% echo Backup Complete %BACKUP_FILE_PATH%%DBDUMP% pause  retore  psql -Uusername &amp;lt; filename dbname psql -Uusername -f filename dbname  backup a table to file or load data into table  COPY mis_user (name, account_number) TO &amp;lsquo;e:/employee.</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL miscellaneous</title>
+      <link>http://chiching.github.io/posts/postgresql/script/</link>
+      <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://chiching.github.io/posts/postgresql/script/</guid>
+      <description> aggregate function  coalesce(field, 0) means if field is null, return 0
+ </description>
+    </item>
+    
+  </channel>
+</rss>
